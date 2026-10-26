@@ -4,10 +4,10 @@
 
 Ensure you have installed the VM Operator as per [Step 3](..%2Foperator%2Freadme.md)
 
-You will need to obtain your Levitate cluster's Remote Write URL and its
+You will need to obtain your Last9 cluster's Remote Write URL and its
 credentials.
 
-[Here](https://docs.last9.io/docs/levitate-onboard) is a quick way to create your cluster and obtain your
+[Here](https://last9.io/docs/onboard/) is a quick way to create your cluster and obtain your
 credentials
 
 Run the below command to list all the placeholder values in this file [vmagent.yaml](vmagent.yaml)
@@ -15,10 +15,10 @@ Run the below command to list all the placeholder values in this file [vmagent.y
 ```bash
 $ cat ./vmagent.yaml | grep -n "Todo"
 # Output
-11:  levitate_cluster_username: "<levitate_cluster_username>" # Todo: append levitate cluster username
-12:  levitate_cluster_password: "<levitate_cluster_password>" # Todo: append levitate cluster password
+11:  last9_cluster_username: "<last9_cluster_username>" # Todo: append last9 cluster username
+12:  last9_cluster_password: "<last9_cluster_password>" # Todo: append last9 cluster password
 31:    via_cluster: <via_cluster> # Todo: add a relevant cluster name. e.g: k8s cluster name
-33:    - url: <levitate_remote_write_url> # Todo: append levitate remote write URL
+33:    - url: <last9_remote_write_url> # Todo: append last9 remote write URL
 55:            storage: 20Gi # Todo: Default is 20Gi. Scale up after you have provisioned more if you need more
 58:# Todo: Below configs need to be enabled depending upon your affinity towards nodegroups.
 59:# Todo: Ensure that the below selector terms and tolerations are exactly same as the metadata of the nodegroups itself.

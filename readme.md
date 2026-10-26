@@ -1,4 +1,4 @@
-# VMAgent Operator Preconfigured for Levitate
+# VMAgent Operator Preconfigured for Last9
 
 ## Installation
 
@@ -10,8 +10,8 @@ Make sure you have the following prerequisites installed:
 - Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/last9/vmagent-operator-levitate.git
-    cd vmagent-operator-levitate
+    git clone https://github.com/last9/vmagent-operator-last9.git
+    cd vmagent-operator-last9
     ```
 
 ### Step 2: Install Custom Resource Definitions (CRDs)
