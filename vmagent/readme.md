@@ -15,14 +15,23 @@ Run the below command to list all the placeholder values in this file [vmagent.y
 ```bash
 $ cat ./vmagent.yaml | grep -n "Todo"
 # Output
-11:  last9_cluster_username: "<last9_cluster_username>" # Todo: append last9 cluster username
-12:  last9_cluster_password: "<last9_cluster_password>" # Todo: append last9 cluster password
-31:    via_cluster: <via_cluster> # Todo: add a relevant cluster name. e.g: k8s cluster name
-33:    - url: <last9_remote_write_url> # Todo: append last9 remote write URL
-55:            storage: 20Gi # Todo: Default is 20Gi. Scale up after you have provisioned more if you need more
-58:# Todo: Below configs need to be enabled depending upon your affinity towards nodegroups.
-59:# Todo: Ensure that the below selector terms and tolerations are exactly same as the metadata of the nodegroups itself.
+19:    via_cluster: <via_cluster> # Todo: add a relevant cluster name. e.g: k8s cluster name
+21:    - url: <last9_remote_write_url> # Todo: append last9 remote write URL
+36:            storage: 20Gi # Todo: Default is 20Gi. Scale up after you have provisioned more if you need more
+39:# Todo: Below configs need to be enabled depending upon your affinity towards nodegroups.
+40:# Todo: Ensure that the below selector terms and tolerations are exactly same as the metadata of the nodegroups itself.
 ```
+
+VMAgent reads the remote write username and password from the `last9-basic-auth` secret. Create it in the `last9-monitoring` namespace:
+
+```bash
+$ kubectl create secret generic last9-basic-auth \
+    --from-literal=username=<last9_cluster_username> \
+    --from-literal=password=<last9_cluster_password> \
+    -n last9-monitoring
+```
+
+> If you installed VMAgent before this secret was renamed, your cluster has a `levitate-basic-auth` secret. Create `last9-basic-auth` with the same values before you apply the updated `vmagent.yaml`.
 
 Proceed to installation once you have replaced the placeholder values with actual values.
 
