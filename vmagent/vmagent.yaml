@@ -18,13 +18,13 @@ spec:
   externalLabels:
     via_cluster: <via_cluster> # Todo: add a relevant cluster name. e.g: k8s cluster name
   remoteWrite:
-    - url: <levitate_remote_write_url> # Todo: append levitate remote write URL
+    - url: <last9_remote_write_url> # Todo: append last9 remote write URL
       basicAuth:
         username:
-          name: levitate-basic-auth
+          name: last9-basic-auth
           key: username
         password:
-          name: levitate-basic-auth
+          name: last9-basic-auth
           key: password
   scrapeInterval: 1m
   statefulMode: true
